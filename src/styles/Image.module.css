@@ -1,0 +1,42 @@
+.image {
+  width: 375px;
+  height: 490px;
+  position: relative;
+}
+
+.image .imageContainer img {
+  width: 375px;
+  height: 490px;
+  /* background-attachment: fixed; */
+  object-fit: cover;
+  object-position: -15px;
+  transition: opacity 0.4s;
+}
+
+.image:hover .imageContainer img {
+  opacity: 0.6;
+}
+
+.image .textContainer {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: opacity 0.4s, left 0.4s, bottom 0.4s;
+}
+
+.image:hover .textContainer {
+  opacity: 1;
+  left: 20px;
+  bottom: 20px;
+}
+
+.image .textContainer p {
+  display: inline;
+  background-color: white;
+  color: var(--fontPrimary);
+  padding: 3px;
+  font-size: 2rem;
+  font-weight: 700;
+  /* word-wrap: break-word; */
+}

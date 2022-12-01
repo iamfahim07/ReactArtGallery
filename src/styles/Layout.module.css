@@ -1,0 +1,11 @@
+.layout {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  gap: 10px;
+}
+
+@media only screen and (max-width: 600px), (max-width: 768px) {
+  .layout {
+    display: block;
+  }
+}

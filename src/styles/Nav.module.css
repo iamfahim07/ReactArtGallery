@@ -1,0 +1,87 @@
+.nav {
+  padding: 1rem 1rem 0.3rem 1rem;
+  position: sticky;
+  position: -webkit-sticky;
+  top: -150px;
+  background-color: #fff;
+  z-index: 1;
+  border-bottom: 1px solid #e5e5e5;
+  box-shadow: 0 0 15px 0 #e5e5e5;
+}
+
+.nav .header a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav .header a img {
+  width: 120px;
+}
+
+.nav .header a h1 {
+  font-size: 60px;
+  font-weight: 700;
+}
+
+.nav .navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  padding: 0 1rem;
+}
+
+.nav .navBar .navOptions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 35px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.nav .navBar .navOptions h4 {
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+.nav .navBar .navOptions h4:hover {
+  background-color: var(--fontPrimary);
+  color: white;
+}
+
+.nav .navBar .account {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.nav .navBar .account a {
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+.nav .navBar .account a:hover {
+  background-color: var(--fontPrimary);
+  color: white;
+}
+
+.current {
+  background-color: var(--fontPrimary) !important;
+  color: white !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .nav .header {
+    display: none;
+  }
+
+  .nav .navBar,
+  .nav .navBar .navOptions,
+  .nav .navBar .account {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}

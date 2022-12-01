@@ -1,0 +1,17 @@
+.secondColumn {
+  padding: 1rem;
+}
+
+/* .secondColumn .image {
+  margin-bottom: 50px;
+} */
+
+.secondColumn > div {
+  margin-bottom: 50px;
+}
+
+@media only screen and (max-width: 600px), (max-width: 768px) {
+  .secondColumn {
+    display: none;
+  }
+}

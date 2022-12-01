@@ -1,0 +1,31 @@
+.textInput {
+  width: 50%;
+  margin: auto;
+}
+
+.textInput input {
+  width: 100%;
+  height: 45px;
+  border: none;
+  border-bottom: 1px solid LightGray;
+  outline: none;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.textInput input:hover,
+.textInput input:focus {
+  border-bottom: 1px solid var(--fontPrimary);
+}
+
+.nameWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.nameWrapper input {
+  width: 50%;
+}
