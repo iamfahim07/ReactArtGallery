@@ -67,9 +67,11 @@
   color: white;
 }
 
-.current {
-  background-color: var(--fontPrimary) !important;
-  color: white !important;
+.current,
+.current h4 {
+  background-color: var(--fontPrimary);
+  color: white;
+  border-radius: 5px;
 }
 
 @media only screen and (max-width: 600px) {

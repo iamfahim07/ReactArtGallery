@@ -21,7 +21,6 @@ function App() {
         <MainLayout>
           <Routes>
             <Route path="/" element={<Home />} />
-
             <Route path="/*" element={<SubPageOutlet />}>
               <Route path="danteandvirgil" element={<DanteAndVirgil />} />
               <Route
@@ -39,7 +38,6 @@ function App() {
             <Route path="artists" element={<Artists />} />
 
             <Route path="painting" element={<Painting />} />
-
             <Route path="painting/*" element={<SubPageOutlet />}>
               <Route
                 path="girlwithApearlearring"

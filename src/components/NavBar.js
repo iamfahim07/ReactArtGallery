@@ -1,29 +1,46 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import classes from "../styles/Nav.module.css";
 
 export default function Navbar() {
   return (
     <div className={classes.navBar}>
       <div className={classes.navOptions}>
-        <Link to="/">
+        <NavLink to="/" className={(c) => (c.isActive ? classes.current : "")}>
           <h4>Home</h4>
-        </Link>
-        <Link to="/artists">
+        </NavLink>
+        <NavLink
+          to="/artists"
+          className={(c) => (c.isActive ? classes.current : "")}
+        >
           <h4>Artists</h4>
-        </Link>
-        <Link to="/arthistory">
+        </NavLink>
+        <NavLink
+          to="/arthistory"
+          className={(c) => (c.isActive ? classes.current : "")}
+        >
           <h4>Art History</h4>
-        </Link>
-        <Link to="/painting">
+        </NavLink>
+        <NavLink
+          to="/painting"
+          className={(c) => (c.isActive ? classes.current : "")}
+        >
           <h4>Painting</h4>
-        </Link>
-        <Link to="/drawing">
+        </NavLink>
+        <NavLink
+          to="/drawing"
+          className={(c) => (c.isActive ? classes.current : "")}
+        >
           <h4>Drawing</h4>
-        </Link>
+        </NavLink>
       </div>
 
       <div className={classes.account}>
-        <Link to="/signin">Sign in</Link>
+        <NavLink
+          to="/signin"
+          className={(c) => (c.isActive ? classes.current : "")}
+        >
+          Sign in
+        </NavLink>
       </div>
     </div>
   );
