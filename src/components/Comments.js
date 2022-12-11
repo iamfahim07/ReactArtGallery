@@ -1,27 +1,18 @@
-import { useCallback, useMemo, useRef, useState } from "react";
+import { nanoid } from "nanoid";
+import { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/AuthProvider";
 import classes from "../styles/Comments.module.css";
+import CommentContainer from "./CommentContainer";
 
 export default function Comments() {
   const [inputValue, setInputValue] = useState("");
   const [data, setData] = useState([]);
   const inputRef = useRef(null);
 
-  const months = useMemo(() => {
-    return [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
-    ];
-  }, []);
+  const { currentUser } = useAuth();
+
+  const navigate = useNavigate();
 
   function dynamicHeight(e) {
     e.target.style.height = "50px";
@@ -29,45 +20,57 @@ export default function Comments() {
     e.target.style.height = `${h}px`;
   }
 
-  const commentsContainer = useMemo(() => {
-    return [];
-  }, []);
+  //Adding Comment Function
+  const addComment = () => {
+    if (!currentUser)
+      return navigate("/signin", {
+        replace: true,
+      });
 
-  const commentTemplate = useCallback(() => {
-    return (
-      <div key={Math.random()} className={classes.userContainer}>
-        <h3 className={classes.name}>Anonymous</h3>
-        <p className={classes.dateText}>{`${
-          months[new Date().getMonth()]
-        } ${new Date().getDate()}, ${new Date().getFullYear()}`}</p>
-        <p className={classes.commentText}>{inputValue}</p>
-        <span
-          title="Edit comment"
-          className={`material-icons-outlined ${classes.commentEdit}`}
-          onClick={editComment}
-        >
-          edit
-        </span>
-        <span
-          title="Delete comment"
-          className={`material-icons-outlined ${classes.commentDelete}`}
-        >
-          delete
-        </span>
-      </div>
-    );
-  }, [inputValue, months]);
-
-  const addComment = useCallback(() => {
     if (/^\s/.test(inputValue) || inputValue === "") return setInputValue("");
-    commentsContainer.push(commentTemplate());
-    setData(commentsContainer);
-    setInputValue("");
-    inputRef.current.style.height = "50px";
-    console.log(commentsContainer);
-  }, [commentTemplate, commentsContainer, inputValue]);
 
-  const editComment = () => {};
+    const uid = nanoid();
+
+    const comment = {
+      id: uid,
+      value: inputValue,
+      edit: true,
+      date: new Date(),
+      newDate: false,
+    };
+
+    setData((prevState) => [comment, ...prevState]);
+
+    setInputValue("");
+
+    inputRef.current.style.height = "50px";
+  };
+
+  const editComment = (e) => {
+    const id = e.target.id;
+
+    let current = data.find((obj) => obj.id === id);
+    current.edit = false;
+
+    setData((prevState) => [...prevState]);
+  };
+
+  const updateComment = (id, updatedData) => {
+    let current = data.find((obj) => obj.id === id);
+    current.value = updatedData;
+    current.edit = true;
+    current.newDate = true;
+
+    setData((prevState) => [...prevState]);
+  };
+
+  const deleteComment = (e) => {
+    const id = e.target.id;
+
+    const newData = data.filter((obj) => obj.id !== id);
+
+    setData(newData);
+  };
 
   return (
     <div className={classes.comments}>
@@ -78,13 +81,23 @@ export default function Comments() {
         onChange={(e) => setInputValue(e.target.value)}
         onInput={dynamicHeight}
         placeholder="Write a comment..."
-      ></textarea>
+      />
 
       <button id={classes.button} onClick={addComment}>
         <span>Comment</span>
       </button>
 
-      <div>{data}</div>
+      {data &&
+        data.map((obj) => (
+          <CommentContainer
+            key={obj.id}
+            obj={obj}
+            editComment={editComment}
+            updateComment={updateComment}
+            deleteComment={deleteComment}
+            dynamicHeight={dynamicHeight}
+          />
+        ))}
     </div>
   );
 }

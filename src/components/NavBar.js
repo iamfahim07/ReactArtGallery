@@ -1,7 +1,10 @@
 import { NavLink } from "react-router-dom";
+import { useAuth } from "../contexts/AuthProvider";
 import classes from "../styles/Nav.module.css";
 
 export default function Navbar() {
+  const { currentUser, signout } = useAuth();
+
   return (
     <div className={classes.navBar}>
       <div className={classes.navOptions}>
@@ -35,12 +38,31 @@ export default function Navbar() {
       </div>
 
       <div className={classes.account}>
-        <NavLink
-          to="/signin"
-          className={(c) => (c.isActive ? classes.current : "")}
-        >
-          Sign in
-        </NavLink>
+        {currentUser ? (
+          <div className={classes.username}>
+            <span className="material-icons-outlined" title="Account">
+              account_circle
+            </span>
+            <span>{currentUser.displayName}</span>
+            <span
+              className="material-icons-outlined"
+              title="Logout"
+              onClick={signout}
+            >
+              {" "}
+              logout{" "}
+            </span>
+          </div>
+        ) : (
+          <>
+            <NavLink
+              to="/signin"
+              className={(c) => (c.isActive ? classes.current : "")}
+            >
+              Sign in
+            </NavLink>
+          </>
+        )}
       </div>
     </div>
   );

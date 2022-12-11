@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { AuthProvider } from "../contexts/AuthProvider";
 import "../styles/App.css";
 import MainLayout from "./MainLayout";
 import ArtHistory from "./pages/ArtHistory";
@@ -18,37 +19,39 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <MainLayout>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/*" element={<SubPageOutlet />}>
-              <Route path="danteandvirgil" element={<DanteAndVirgil />} />
-              <Route
-                path="ivantheterribleandhissonivan"
-                element={<IvanTheTerribleAndHisSonIvan />}
-              />
-            </Route>
+        <AuthProvider>
+          <MainLayout>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/*" element={<SubPageOutlet />}>
+                <Route path="danteandvirgil" element={<DanteAndVirgil />} />
+                <Route
+                  path="ivantheterribleandhissonivan"
+                  element={<IvanTheTerribleAndHisSonIvan />}
+                />
+              </Route>
 
-            <Route path="signin" element={<Signin />} />
+              <Route path="signin" element={<Signin />} />
 
-            <Route path="signup" element={<Signup />} />
+              <Route path="signup" element={<Signup />} />
 
-            <Route path="arthistory" element={<ArtHistory />} />
+              <Route path="arthistory" element={<ArtHistory />} />
 
-            <Route path="artists" element={<Artists />} />
+              <Route path="artists" element={<Artists />} />
 
-            <Route path="painting" element={<Painting />} />
-            <Route path="painting/*" element={<SubPageOutlet />}>
-              <Route
-                path="girlwithApearlearring"
-                element={<GirlWithAPearlEarring />}
-              />
-              <Route path="laprimavera" element={<LaPrimavera />} />
-            </Route>
+              <Route path="painting" element={<Painting />} />
+              <Route path="painting/*" element={<SubPageOutlet />}>
+                <Route
+                  path="girlwithApearlearring"
+                  element={<GirlWithAPearlEarring />}
+                />
+                <Route path="laprimavera" element={<LaPrimavera />} />
+              </Route>
 
-            <Route path="drawing" element={<Drawing />} />
-          </Routes>
-        </MainLayout>
+              <Route path="drawing" element={<Drawing />} />
+            </Routes>
+          </MainLayout>
+        </AuthProvider>
       </Router>
     </div>
   );
