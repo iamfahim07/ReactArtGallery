@@ -1,46 +1,28 @@
-import img from "../../assets/images/Raphael/The School of Athens.jpg";
+import useImageList from "../../hooks/useImageList";
 import ImageComponent from "../ImageComponent";
 import ImagesComponent from "../ImagesComponent";
 
 export default function Home() {
+  const { loading, error, images } = useImageList("home");
+
   return (
     <ImagesComponent>
-      <ImageComponent
-        to={"danteandvirgil"}
-        img={img}
-        alt={"Raphael"}
-        text={"The School of Athens"}
-      />
-      <ImageComponent
-        to={"ivantheterribleandhissonivan"}
-        img={img}
-        alt={"Raphael"}
-        text={"The School of Athens"}
-      />
-      <ImageComponent
-        to={"./sub-pages/home/theSchoolOfAthens.html"}
-        img={img}
-        alt={"Raphael"}
-        text={"The School of Athens"}
-      />
-      <ImageComponent
-        to={"./sub-pages/home/theSchoolOfAthens.html"}
-        img={img}
-        alt={"Raphael"}
-        text={"The School of Athens"}
-      />
-      <ImageComponent
-        to={"./sub-pages/home/theSchoolOfAthens.html"}
-        img={img}
-        alt={"Raphael"}
-        text={"The School of Athens"}
-      />
-      <ImageComponent
-        to={"./sub-pages/home/theSchoolOfAthens.html"}
-        img={img}
-        alt={"Raphael"}
-        text={"The School of Athens"}
-      />
+      {images.length > 0 &&
+        images.map((image) => {
+          return (
+            <ImageComponent
+              key={Math.random()}
+              to={image.link}
+              img={image.imgUrl}
+              alt={image.altText}
+              text={image.text}
+            />
+          );
+        })}
+
+      {loading && <div>Loading...</div>}
+      {!loading && images.length === 0 && <div>No data found!</div>}
+      {error && <div>There was an error!</div>}
     </ImagesComponent>
   );
 }

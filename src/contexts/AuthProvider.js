@@ -7,6 +7,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import React, { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../firebase";
 
 const AuthContext = React.createContext();
@@ -18,6 +19,7 @@ export function useAuth() {
 export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
   const [currentUser, setCurrentUser] = useState();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const auth = getAuth();
@@ -54,7 +56,10 @@ export function AuthProvider({ children }) {
   //signout function
   function signout() {
     const auth = getAuth();
-    return signOut(auth);
+    signOut(auth);
+    navigate("/", {
+      replace: true,
+    });
   }
 
   const value = {

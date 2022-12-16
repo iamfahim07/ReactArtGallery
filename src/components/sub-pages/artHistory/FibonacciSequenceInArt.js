@@ -1,5 +1,3 @@
-import subImg from "../../../assets/images/Art history/Black Death Art.jpg";
-import img from "../../../assets/images/Art history/Fibonacci Sequence in Art.jpg";
 import Comments from "../../Comments";
 import FirstColumn from "../../FirstColumn";
 import FirstColumnImg from "../../FirstColumnImg";
@@ -14,7 +12,12 @@ export default function FibonacciSequenceInArt() {
       <Layout>
         <FirstColumn>
           <h1>Fibonacci Sequence in Art - Using the Fibonacci Theory in Art</h1>
-          <FirstColumnImg img={img} alt={"Fibonacci Sequence in Art"} />
+          <FirstColumnImg
+            img={
+              "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Art%20History%2FFibonacci%20Sequence%20in%20Art.jpg?alt=media&token=e91cd094-a408-4cda-8467-7571541979fb"
+            }
+            alt={"Fibonacci Sequence in Art"}
+          />
           <FirstColumnText>
             <h6>
               You may have heard of the golden section in your mathematics class
@@ -143,8 +146,10 @@ export default function FibonacciSequenceInArt() {
         </FirstColumn>
         <SecondColumn>
           <ImageComponent
-            href={"./blackDeathArt.html"}
-            img={subImg}
+            to={"/arthistory/blackdeathart"}
+            img={
+              "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Art%20History%2FBlack%20Death%20Art.jpg?alt=media&token=cfe59439-a149-40e0-9d99-989849a6639b"
+            }
             alt={"Black Death Art"}
             text={
               <>
@@ -153,22 +158,27 @@ export default function FibonacciSequenceInArt() {
             }
           />
           <ImageComponent
-            href={"./blackDeathArt.html"}
-            img={subImg}
-            alt={"Black Death Art"}
+            to={"/arthistory/paintingvsdrawing"}
+            img={
+              "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Art%20History%2FPainting%20vs%20Drawing.jpg?alt=media&token=478c6dde-6eba-41f4-ba94-a364332d648b"
+            }
+            alt={"Painting vs. Drawing"}
             text={
               <>
-                Black Death Art - <br /> Artworks of the Medieval Bubonic Plague
+                Painting vs. Drawing - <br /> Tips for Learning How to Paint vs.
+                Draw
               </>
             }
           />
           <ImageComponent
-            href={"./blackDeathArt.html"}
-            img={subImg}
-            alt={"Black Death Art"}
+            to={"/arthistory/whatis2dart"}
+            img={
+              "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Art%20History%2FWhat%20Is%202D%20Art.jpg?alt=media&token=9b0774b1-0652-45d8-92a9-40d001fe81cd"
+            }
+            alt={"What Is 2D Art"}
             text={
               <>
-                Black Death Art - <br /> Artworks of the Medieval Bubonic Plague
+                What Is 2D Art? - <br /> Explore the Different Types of 2D Art
               </>
             }
           />

@@ -1,46 +1,28 @@
-import img from "../../assets/images/Gustave Dore/Samson Slaying a Lion.jpg";
+import useImageList from "../../hooks/useImageList";
 import ImageComponent from "../ImageComponent";
 import ImagesComponent from "../ImagesComponent";
 
 export default function Drawing() {
+  const { loading, error, images } = useImageList("drawing");
+
   return (
     <ImagesComponent>
-      <ImageComponent
-        href={"./sub-pages/drawing/samsonSlayingALion.html"}
-        img={img}
-        alt={"Samson Slaying a Lion"}
-        text={"Samson Slaying a Lion"}
-      />
-      <ImageComponent
-        href={"./sub-pages/drawing/samsonSlayingALion.html"}
-        img={img}
-        alt={"Samson Slaying a Lion"}
-        text={"Samson Slaying a Lion"}
-      />
-      <ImageComponent
-        href={"./sub-pages/drawing/samsonSlayingALion.html"}
-        img={img}
-        alt={"Samson Slaying a Lion"}
-        text={"Samson Slaying a Lion"}
-      />
-      <ImageComponent
-        href={"./sub-pages/drawing/samsonSlayingALion.html"}
-        img={img}
-        alt={"Samson Slaying a Lion"}
-        text={"Samson Slaying a Lion"}
-      />
-      <ImageComponent
-        href={"./sub-pages/drawing/samsonSlayingALion.html"}
-        img={img}
-        alt={"Samson Slaying a Lion"}
-        text={"Samson Slaying a Lion"}
-      />
-      <ImageComponent
-        href={"./sub-pages/drawing/samsonSlayingALion.html"}
-        img={img}
-        alt={"Samson Slaying a Lion"}
-        text={"Samson Slaying a Lion"}
-      />
+      {images.length > 0 &&
+        images.map((image) => {
+          return (
+            <ImageComponent
+              key={Math.random()}
+              to={image.link}
+              img={image.imgUrl}
+              alt={image.altText}
+              text={image.text}
+            />
+          );
+        })}
+
+      {loading && <div>Loading...</div>}
+      {!loading && images.length === 0 && <div>No data found!</div>}
+      {error && <div>There was an error!</div>}
     </ImagesComponent>
   );
 }

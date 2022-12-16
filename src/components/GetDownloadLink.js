@@ -2,17 +2,14 @@ import { getDownloadURL, getStorage, ref } from "firebase/storage";
 import { useState } from "react";
 import "../firebase";
 
-export default function GetDownloadLink() {
+export default function GetDownloadLink({ imgLink }) {
   const [error, setError] = useState(false);
   const [link, setLink] = useState("");
 
   async function getlink() {
     const storage = getStorage();
 
-    const storageRef = ref(
-      storage,
-      "gs://test-project-834ad.appspotcom/Art history/What Is 3D Art.jpg"
-    );
+    const storageRef = ref(storage, imgLink);
 
     // getDownloadURL(storageRef).then((url) => {
     //   setLink(url);

@@ -1,4 +1,3 @@
-import img from "../../../assets/images/William-Adolphe Bouguereau/Dante and Virgil.jpg";
 import ArtistImageAndInfoAndDescription from "../../ArtistImageAndInfoAndDescription";
 import Comments from "../../Comments";
 
@@ -6,7 +5,9 @@ export default function DanteAndVirgil() {
   return (
     <>
       <ArtistImageAndInfoAndDescription
-        img={img}
+        img={
+          "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Home%2FDante%20and%20Virgil.jpg?alt=media&token=244c9769-ec4f-44b1-8a7a-542e536934a2"
+        }
         alt={"Dante and Virgil"}
         width={"750"}
         height={"900"}

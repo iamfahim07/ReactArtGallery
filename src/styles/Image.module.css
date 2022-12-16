@@ -13,7 +13,8 @@
   transition: opacity 0.4s;
 }
 
-.image:hover .imageContainer img {
+.image:hover .imageContainer img,
+.image:active .imageContainer img {
   opacity: 0.6;
 }
 
@@ -25,7 +26,8 @@
   transition: opacity 0.4s, left 0.4s, bottom 0.4s;
 }
 
-.image:hover .textContainer {
+.image:hover .textContainer,
+.image:active .textContainer {
   opacity: 1;
   left: 20px;
   bottom: 20px;
@@ -39,4 +41,23 @@
   font-size: 2rem;
   font-weight: 700;
   /* word-wrap: break-word; */
+}
+
+@media only screen and (max-width: 600px) {
+  .image {
+    width: 95%;
+    height: 490px;
+    margin: auto;
+  }
+
+  .image .imageContainer img {
+    width: 100%;
+    height: 490px;
+  }
+
+  .image:hover .textContainer,
+  .image:active .textContainer {
+    left: 12px;
+    bottom: 15px;
+  }
 }

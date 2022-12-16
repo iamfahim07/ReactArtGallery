@@ -1,4 +1,3 @@
-import img from "../../../assets/images/Pablo Picasso/Dora Maar with cat.jfif";
 import ArtistImageAndInfoAndDescription from "../../ArtistImageAndInfoAndDescription";
 import Comments from "../../Comments";
 
@@ -6,7 +5,9 @@ export default function DoraMaarWithCat() {
   return (
     <>
       <ArtistImageAndInfoAndDescription
-        img={img}
+        img={
+          "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Drawing%2FDora%20Maar%20with%20cat.jfif?alt=media&token=b7443a98-2e1e-4f74-a6f2-e6bf184bc1d6"
+        }
         alt={"Dora Maar With Cat"}
         width={"750"}
         height={"900"}

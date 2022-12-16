@@ -1,4 +1,3 @@
-import img from "../../../assets/images/Sandro Botticelli/La Primavera.jpg";
 import ArtistImageAndInfoAndDescription from "../../ArtistImageAndInfoAndDescription";
 import Comments from "../../Comments";
 
@@ -6,7 +5,9 @@ export default function LaPrimavera() {
   return (
     <>
       <ArtistImageAndInfoAndDescription
-        img={img}
+        img={
+          "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Painting%2FLa%20Primavera.jpg?alt=media&token=dc610d66-55de-44c9-825a-40a71e417414"
+        }
         alt={"La Primavera"}
         width={"750"}
         height={"900"}

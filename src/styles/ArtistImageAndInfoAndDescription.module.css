@@ -53,4 +53,8 @@
   .artistInfo p span {
     font-size: 20px;
   }
+
+  .artistInfo {
+    padding: 0;
+  }
 }

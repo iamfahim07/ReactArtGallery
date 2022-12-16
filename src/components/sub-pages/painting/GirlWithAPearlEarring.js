@@ -1,4 +1,3 @@
-import img from "../../../assets/images/Johannes Vermeer/Girl With a Pearl Earring.jpg";
 import ArtistImageAndInfoAndDescription from "../../ArtistImageAndInfoAndDescription";
 import Comments from "../../Comments";
 
@@ -6,7 +5,9 @@ export default function GirlWithAPearlEarring() {
   return (
     <>
       <ArtistImageAndInfoAndDescription
-        img={img}
+        img={
+          "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Painting%2FGirl%20With%20a%20Pearl%20Earring.jpg?alt=media&token=ae835579-c844-4d42-aa0a-8a3a02067af3"
+        }
         alt={"Girl With a Pearl Earring"}
         width={"750"}
         height={"900"}

@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import logo from "../assets/images/logo.png";
 import classes from "../styles/Nav.module.css";
 import NavBar from "./NavBar";
 
@@ -8,7 +7,12 @@ export default function Nav() {
     <nav className={classes.nav}>
       <header className={classes.header}>
         <Link to="/">
-          <img src={logo} alt="Logo" />
+          <img
+            src={
+              "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/logo.png?alt=media&token=70891a12-117a-4869-b43a-c6c0d819f53b"
+            }
+            alt="Logo"
+          />
           <h1>Art Gallery</h1>
         </Link>
       </header>

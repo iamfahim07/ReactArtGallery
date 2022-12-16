@@ -1,4 +1,3 @@
-import img from "../../../assets/images/Gustave Dore/Gustave Dore.jpg";
 import ArtistImageAndInfoAndDescription from "../../ArtistImageAndInfoAndDescription";
 import Comments from "../../Comments";
 
@@ -6,7 +5,9 @@ export default function GustaveDore() {
   return (
     <>
       <ArtistImageAndInfoAndDescription
-        img={img}
+        img={
+          "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Artists%2FGustave%20Dore.jpg?alt=media&token=bd99f23f-d833-47bc-bb7a-e320ffd9cab8"
+        }
         alt={"Gustave Doré"}
         width={"450"}
         height={"600"}

@@ -3,8 +3,8 @@ import classes from "../styles/SubmitButton.module.css";
 
 export default function SubmitButton({ type, loading }) {
   return (
-    <div className={classes.buttonWraper} disabled={loading} type={type}>
-      <button className={classes.button}>
+    <div className={classes.buttonWraper} type={type}>
+      <button className={classes.button} disabled={loading}>
         <span>Sign in</span>
       </button>
 

@@ -1,4 +1,3 @@
-import img from "../../../assets/images/Vincent van Gogh/Nursery on Schenkweg.jpg";
 import ArtistImageAndInfoAndDescription from "../../ArtistImageAndInfoAndDescription";
 import Comments from "../../Comments";
 
@@ -6,7 +5,9 @@ export default function NurseryOnSchenkweg() {
   return (
     <>
       <ArtistImageAndInfoAndDescription
-        img={img}
+        img={
+          "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Drawing%2FNursery%20on%20Schenkweg.jpg?alt=media&token=c97d7cc1-41ec-4e30-9663-faea75b0a66f"
+        }
         alt={"Nursery on Schenkweg"}
         width={"750"}
         height={"900"}

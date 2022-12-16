@@ -25,6 +25,10 @@
   font-weight: 700;
 }
 
+.menuIcon {
+  display: none;
+}
+
 .nav .navBar {
   display: flex;
   justify-content: space-between;
@@ -33,7 +37,7 @@
   padding: 0 1rem;
 }
 
-.nav .navBar .navOptions {
+.navOptions {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -47,7 +51,8 @@
   padding: 0.5rem;
 }
 
-.nav .navBar .navOptions h4:hover {
+.nav .navBar .navOptions h4:hover,
+.nav .navBar .navOptions h4:active {
   background-color: var(--fontPrimary);
   color: white;
 }
@@ -62,7 +67,8 @@
   padding: 0.5rem;
 }
 
-.nav .navBar .account a:hover {
+.nav .navBar .account a:hover,
+.nav .navBar .account a:active {
   background-color: var(--fontPrimary);
   color: white;
 }
@@ -95,15 +101,63 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .nav .header {
-    display: none;
+  .nav {
+    padding: 5px 0 0;
+    position: sticky;
+    position: -webkit-sticky;
+    top: -95px;
+    background-color: #fff;
+    z-index: 1;
+    border-bottom: 1px solid #e5e5e5;
+    box-shadow: 0 0 15px 0 #e5e5e5;
   }
 
-  .nav .navBar,
-  .nav .navBar .navOptions,
-  .nav .navBar .account {
+  .nav .header a img {
+    width: 80px;
+  }
+
+  .nav .header a h1 {
+    font-size: 40px;
+    font-weight: 700;
+  }
+
+  .menuIcon {
     display: block;
-    width: 100%;
-    text-align: center;
+    cursor: pointer;
+  }
+
+  .nav .navBar {
+    margin-top: 5px;
+    padding: 0.3rem 0.5rem 0.1rem;
+    background-color: #f1f1f1;
+  }
+
+  .navOptions {
+    display: block;
+    text-align: left;
+    background-color: #f1f1f1;
+    margin: 0;
+    padding-top: 15px;
+    position: absolute;
+    top: 130px;
+    left: 0;
+    width: 50%;
+    height: 100vh;
+    z-index: -1;
+    transition: left 0.4s;
+  }
+
+  .navSlideOpen {
+    left: 0;
+  }
+
+  .navSlideClose {
+    left: -50%;
+  }
+
+  .nav .navBar .navOptions h4 {
+    border-radius: 0;
+    padding: 0.5rem 0.5rem 0.5rem 0.7rem;
+    margin: 5px 0;
   }
 }

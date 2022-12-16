@@ -64,12 +64,16 @@
 }
 
 #button:hover,
-.updateButton:hover {
+#button:active,
+.updateButton:hover,
+.updateButton:active {
   background-color: var(--fontPrimary);
 }
 
 #button:hover span,
-.updateButton:hover span {
+#button:active span,
+.updateButton:hover span,
+.updateButton:active span {
   color: white;
 }
 

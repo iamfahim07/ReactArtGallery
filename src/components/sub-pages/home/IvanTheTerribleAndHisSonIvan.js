@@ -1,4 +1,3 @@
-import img from "../../../assets/images/Ilya Repin/Ivan the Terrible and His Son Ivan.jfif";
 import ArtistImageAndInfoAndDescription from "../../ArtistImageAndInfoAndDescription";
 import Comments from "../../Comments";
 
@@ -6,7 +5,9 @@ export default function IvanTheTerribleAndHisSonIvan() {
   return (
     <>
       <ArtistImageAndInfoAndDescription
-        img={img}
+        img={
+          "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Home%2FIvan%20the%20Terrible%20and%20His%20Son%20Ivan.jfif?alt=media&token=e2d3f607-5b6f-4e56-9b5a-3f6e35f6303b"
+        }
         alt={"Ivan the Terrible and His Son Ivan"}
         width={"750"}
         height={"900"}

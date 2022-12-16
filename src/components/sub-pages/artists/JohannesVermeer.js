@@ -1,4 +1,3 @@
-import img from "../../../assets/images/Johannes Vermeer/Johannes Vermeer.jpg";
 import ArtistImageAndInfoAndDescription from "../../ArtistImageAndInfoAndDescription";
 import Comments from "../../Comments";
 
@@ -6,7 +5,9 @@ export default function JohannesVermeer() {
   return (
     <>
       <ArtistImageAndInfoAndDescription
-        img={img}
+        img={
+          "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Artists%2FJohannes%20Vermeer.jpg?alt=media&token=7cdca170-7de4-4ad2-84d0-a657447b8145"
+        }
         alt={"Johannes Vermeer"}
         width={"450"}
         height={"600"}

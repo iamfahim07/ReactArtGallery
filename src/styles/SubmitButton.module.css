@@ -13,7 +13,8 @@
   background-color: white;
 }
 
-.button:hover {
+.button:hover,
+.button:active {
   border: 1px solid var(--fontPrimary);
 }
 
@@ -23,7 +24,9 @@
 }
 
 .button:hover span,
-.button:hover a {
+.button:active span,
+.button:hover a,
+.button:active a {
   opacity: 1;
 }
 
@@ -46,4 +49,10 @@
 .txt a {
   font-size: 18px;
   font-weight: 700;
+}
+
+@media only screen and (max-width: 600px) {
+  .buttonWraper {
+    width: 100%;
+  }
 }

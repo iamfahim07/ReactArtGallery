@@ -1,1 +1,192 @@
-{}
+{
+  "home": {
+    "1": {
+      "link": "theschoolofathens",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Home%2FThe%20School%20of%20Athens.jpg?alt=media&token=8a8535a8-9982-4216-9deb-82a6f38cf5db",
+      "altText": "The School of Athens",
+      "text": "The School of Athens"
+    },
+    "2": {
+      "link": "thestarrynight",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Home%2FThe%20Starry%20Night.jfif?alt=media&token=c60afbca-6b9a-4ceb-879a-9a526e27cc63",
+      "altText": "The Starry Night",
+      "text": "The Starry Night"
+    },
+    "3": {
+      "link": "theweddingatcana",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Home%2FThe%20Wedding.jpg?alt=media&token=82ada8ea-dfdd-4382-878f-1c54c169fa04",
+      "altText": "The Wedding at Cana",
+      "text": "The Wedding at Cana"
+    },
+    "4": {
+      "link": "ivantheterribleandhissonivan",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Home%2FIvan%20the%20Terrible%20and%20His%20Son%20Ivan.jfif?alt=media&token=e2d3f607-5b6f-4e56-9b5a-3f6e35f6303b",
+      "altText": "Ivan the Terrible and His Son Ivan",
+      "text": "Ivan the Terrible and His Son Ivan"
+    },
+    "5": {
+      "link": "danteandvirgil",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Home%2FDante%20and%20Virgil.jpg?alt=media&token=244c9769-ec4f-44b1-8a7a-542e536934a2",
+      "altText": "Dante and Virgil",
+      "text": "Dante and Virgil"
+    },
+    "6": {
+      "link": "monalisa",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Home%2FMona%20Lisa.jpg?alt=media&token=a4e5da78-6ead-4dce-9435-aff3ab9fc666",
+      "altText": "Mona Lisa",
+      "text": "Mona Lisa"
+    }
+  },
+  "artist": {
+    "1": {
+      "link": "raphael",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Artists%2FRaphael.jpg?alt=media&token=9da3ab63-0ec2-47da-b2ec-22e4cc2b56ca",
+      "altText": "Raphael",
+      "text": "Raphael"
+    },
+    "2": {
+      "link": "vincentvangogh",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Artists%2FVincent%20van%20Gogh.jfif?alt=media&token=1d6cb47d-296f-4819-a5d7-f7dc4d6d587d",
+      "altText": "Vincent van Gogh",
+      "text": "Vincent van Gogh"
+    },
+    "3": {
+      "link": "leonardodavinci",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Artists%2FLeonardo%20da%20Vinci.jfif?alt=media&token=44ef5c1e-1d3b-49b8-bad4-2606837b2d2d",
+      "altText": "Leonardo da Vinci",
+      "text": "Leonardo da Vinci"
+    },
+    "4": {
+      "link": "gustavedore",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Artists%2FGustave%20Dore.jpg?alt=media&token=bd99f23f-d833-47bc-bb7a-e320ffd9cab8",
+      "altText": "Gustave Doré",
+      "text": "Gustave Doré"
+    },
+    "5": {
+      "link": "johannesvermeer",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Artists%2FJohannes%20Vermeer.jpg?alt=media&token=7cdca170-7de4-4ad2-84d0-a657447b8145",
+      "altText": "Johannes Vermeer",
+      "text": "Johannes Vermeer"
+    },
+    "6": {
+      "link": "pablopicasso",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Artists%2FPablo%20Picasso.jfif?alt=media&token=8461ad95-20d5-4eb8-bb7c-9b24057c7460",
+      "altText": "Pablo Picasso",
+      "text": "Pablo Picasso"
+    }
+  },
+  "artHistory": {
+    "1": {
+      "link": "whatis3dart",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Art%20History%2FWhat%20Is%203D%20Art.jpg?alt=media&token=cf0842a4-0d6e-4c81-9b31-fab75acbd7ff",
+      "altText": "What Is 3D Art",
+      "text": "What Is 3D Art? - The Different Aspects of Three-Dimensional Art"
+    },
+    "2": {
+      "link": "repetitioninart",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Art%20History%2FRepetition%20in%20Art.jpg?alt=media&token=afb2fa82-c3a2-4b3b-aee9-bfcec0f7d43c",
+      "altText": "Repetition in Art",
+      "text": "Repetition in Art - What Is Repetition in Art and How Is It Used?"
+    },
+    "3": {
+      "link": "paintingvsdrawing",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Art%20History%2FPainting%20vs%20Drawing.jpg?alt=media&token=478c6dde-6eba-41f4-ba94-a364332d648b",
+      "altText": "Painting vs Drawing",
+      "text": "Painting vs. Drawing - Tips for Learning How to Paint vs. Draw"
+    },
+    "4": {
+      "link": "blackdeathart",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Art%20History%2FBlack%20Death%20Art.jpg?alt=media&token=cfe59439-a149-40e0-9d99-989849a6639b",
+      "altText": "Black Death Art",
+      "text": "Black Death Art - Artworks of the Medieval Bubonic Plague"
+    },
+    "5": {
+      "link": "fibonaccisequenceinart",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Art%20History%2FFibonacci%20Sequence%20in%20Art.jpg?alt=media&token=e91cd094-a408-4cda-8467-7571541979fb",
+      "altText": "Fibonacci Sequence in Art",
+      "text": "Fibonacci Sequence in Art - Using the Fibonacci Theory in Art"
+    },
+    "6": {
+      "link": "whatis2dart",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Art%20History%2FWhat%20Is%202D%20Art.jpg?alt=media&token=9b0774b1-0652-45d8-92a9-40d001fe81cd",
+      "altText": "What Is 2D Art",
+      "text": "What Is 2D Art? - Explore the Different Types of 2D Art"
+    }
+  },
+  "painting": {
+    "1": {
+      "link": "thedeathofsocrates",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Painting%2FThe%20Death%20of%20Socrates.jpg?alt=media&token=6b5ed271-b46e-4a6d-b6b9-74b514848df5",
+      "altText": "The Death of Socrates",
+      "text": "The Death of Socrates"
+    },
+    "2": {
+      "link": "saturndevouringoneofhissons",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Painting%2FSaturn%20Devouring%20One%20of%20His%20Sons.jpg?alt=media&token=61c7bf75-0dfc-4267-9c66-4b8c8ba6be0c",
+      "altText": "Saturn Devouring One of His Sons",
+      "text": "Saturn Devouring One of His Sons"
+    },
+    "3": {
+      "link": "girlwithApearlearring",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Painting%2FGirl%20With%20a%20Pearl%20Earring.jpg?alt=media&token=ae835579-c844-4d42-aa0a-8a3a02067af3",
+      "altText": "Girl With a Pearl Earring",
+      "text": "Girl With a Pearl Earring"
+    },
+    "4": {
+      "link": "starrynightovertherhoone",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Painting%2FStarry%20Night%20Over%20the%20Rho%CC%82ne.jpg?alt=media&token=baf61418-84c0-46f8-bac9-3fd6c97ae041",
+      "altText": "Starry Night Over the Rhône",
+      "text": "Starry Night Over the Rhône"
+    },
+    "5": {
+      "link": "thecreationofadam",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Painting%2FThe%20Creation%20of%20Adam.jpg?alt=media&token=723c5fd1-57b4-4465-9ad4-004079cd173f",
+      "altText": "The Creation of Adam",
+      "text": "The Creation of Adam"
+    },
+    "6": {
+      "link": "laprimavera",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Painting%2FLa%20Primavera.jpg?alt=media&token=dc610d66-55de-44c9-825a-40a71e417414",
+      "altText": "La Primavera",
+      "text": "La Primavera"
+    }
+  },
+  "drawing": {
+    "1": {
+      "link": "samsonslayingalion",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Drawing%2FSamson%20Slaying%20a%20Lion.jpg?alt=media&token=ae420d69-c203-43aa-9217-cecb9ac128cf",
+      "altText": "Samson Slaying a Lion",
+      "text": "Samson Slaying a Lion"
+    },
+    "2": {
+      "link": "nurseryonschenkweg",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Drawing%2FNursery%20on%20Schenkweg.jpg?alt=media&token=c97d7cc1-41ec-4e30-9663-faea75b0a66f",
+      "altText": "Nursery on Schenkweg",
+      "text": "Nursery on Schenkweg"
+    },
+    "3": {
+      "link": "vitruvianman",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Drawing%2FVitruvian%20Man.jfif?alt=media&token=be5004a9-4c45-4e14-8787-ced75db45227",
+      "altText": "Vitruvian Man",
+      "text": "Vitruvian Man"
+    },
+    "4": {
+      "link": "doramaarwithcat",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Drawing%2FDora%20Maar%20with%20cat.jfif?alt=media&token=b7443a98-2e1e-4f74-a6f2-e6bf184bc1d6",
+      "altText": "Dora Maar With Cat",
+      "text": "Dora Maar With Cat"
+    },
+    "5": {
+      "link": "thearcherandthemilkmaid",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Drawing%2FThe%20Archer%20and%20the%20Milkmaid.jpg?alt=media&token=ec20b25f-87f6-4a70-8c19-cc3a224259bb",
+      "altText": "The Archer and the Milkmaid",
+      "text": "The Archer and the Milkmaid"
+    },
+    "6": {
+      "link": "womanfromthevillapamphili",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Drawing%2FWoman%20from%20the%20Villa%20Pamphili.jpg?alt=media&token=6a08468d-640e-4838-af3c-8d5fa9bfc30e",
+      "altText": "Woman from the Villa Pamphili",
+      "text": "Woman from the Villa Pamphili"
+    }
+  }
+}

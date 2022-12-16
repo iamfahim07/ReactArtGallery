@@ -1,5 +1,3 @@
-import img from "../../../assets/images/Art history/Black Death Art.jpg";
-import subImg from "../../../assets/images/Art history/Repetition in Art.jpg";
 import Comments from "../../Comments";
 import FirstColumn from "../../FirstColumn";
 import FirstColumnImg from "../../FirstColumnImg";
@@ -14,7 +12,12 @@ export default function BlackDeathArt() {
       <Layout>
         <FirstColumn>
           <h1>Black Death Art - Artworks of the Medieval Bubonic Plague</h1>
-          <FirstColumnImg img={img} alt={"Black Death Art"} />
+          <FirstColumnImg
+            img={
+              "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Art%20History%2FBlack%20Death%20Art.jpg?alt=media&token=cfe59439-a149-40e0-9d99-989849a6639b"
+            }
+            alt={"Black Death Art"}
+          />
           <FirstColumnText>
             <h6>
               Exactly what effect did the black plague have on art? Throughout
@@ -133,10 +136,13 @@ export default function BlackDeathArt() {
             </p>
           </FirstColumnText>
         </FirstColumn>
+
         <SecondColumn>
           <ImageComponent
-            href={"./repetitionInArt.html"}
-            img={subImg}
+            to={"/arthistory/repetitioninart"}
+            img={
+              "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Art%20History%2FRepetition%20in%20Art.jpg?alt=media&token=afb2fa82-c3a2-4b3b-aee9-bfcec0f7d43c"
+            }
             alt={"Repetition in Art"}
             text={
               <>
@@ -146,24 +152,24 @@ export default function BlackDeathArt() {
             }
           />
           <ImageComponent
-            href={"./repetitionInArt.html"}
-            img={subImg}
-            alt={"Repetition in Art"}
+            to={"/arthistory/fibonaccisequenceinart"}
+            img={
+              "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Art%20History%2FFibonacci%20Sequence%20in%20Art.jpg?alt=media&token=e91cd094-a408-4cda-8467-7571541979fb"
+            }
+            alt={"Fibonacci Sequence in Art"}
             text={
-              <>
-                Repetition in Art - <br /> What Is Repetition in Art and How Is
-                It Used?
-              </>
+              <>Fibonacci Sequence in Art - Using the Fibonacci Theory in Art</>
             }
           />
           <ImageComponent
-            href={"./repetitionInArt.html"}
-            img={subImg}
-            alt={"Repetition in Art"}
+            to={"/arthistory/whatis2dart"}
+            img={
+              "https://firebasestorage.googleapis.com/v0/b/react-art-gallery.appspot.com/o/Art%20History%2FWhat%20Is%202D%20Art.jpg?alt=media&token=9b0774b1-0652-45d8-92a9-40d001fe81cd"
+            }
+            alt={"What Is 2D Art"}
             text={
               <>
-                Repetition in Art - <br /> What Is Repetition in Art and How Is
-                It Used?
+                What Is 2D Art? - <br /> Explore the Different Types of 2D Art
               </>
             }
           />
