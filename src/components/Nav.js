@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import classes from "../styles/Nav.module.css";
 import NavBar from "./NavBar";
 
-export default function Nav() {
+export default function Nav({ show, setShow }) {
   return (
     <nav className={classes.nav}>
-      <header className={classes.header}>
+      <header className={classes.header} onClick={() => setShow(true)}>
         <Link to="/">
           <img
             src={
@@ -16,7 +16,7 @@ export default function Nav() {
           <h1>Art Gallery</h1>
         </Link>
       </header>
-      <NavBar />
+      <NavBar show={show} setShow={setShow} />
     </nav>
   );
 }

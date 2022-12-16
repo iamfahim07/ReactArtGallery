@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useAuth } from "../contexts/AuthProvider";
 import classes from "../styles/Comments.module.css";
 
@@ -11,6 +11,8 @@ export default function CommentContainer({
 }) {
   const [updatedData, setUpdatedData] = useState(obj.value);
   const [show, setShow] = useState(false);
+
+  const inputRef = useRef(null);
 
   const months = [
     "January",
@@ -42,6 +44,13 @@ export default function CommentContainer({
       setShow(false);
     }
   }, [currentUser, userId]);
+
+  useEffect(() => {
+    if (!edit) {
+      inputRef.current.value = updatedData;
+      inputRef.current.focus();
+    }
+  }, [updatedData, edit]);
 
   return edit ? (
     <div className={classes.userContainer}>
@@ -88,11 +97,10 @@ export default function CommentContainer({
         } ${date.getDate()}, ${date.getFullYear()}`}</p>
         <textarea
           className={classes.updateInput}
-          value={updatedData}
           onChange={(e) => setUpdatedData(e.target.value)}
           onInput={dynamicHeight}
           onFocus={dynamicHeight}
-          autoFocus
+          ref={inputRef}
         />
         <button
           className={classes.updateButton}

@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { useAuth } from "../contexts/AuthProvider";
 import classes from "../styles/Nav.module.css";
 
-export default function Navbar() {
-  const [show, setShow] = useState(true);
+export default function Navbar({ show, setShow }) {
   const { currentUser, signout } = useAuth();
 
   const { pathname } = useLocation();
