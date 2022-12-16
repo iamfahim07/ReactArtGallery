@@ -93,6 +93,9 @@ export default function Navbar() {
         ) : (
           <>
             <NavLink
+              onClick={() => {
+                setShow(true);
+              }}
               to={pathname === "/signin" ? "/signup" : "/signin"}
               className={() =>
                 pathname === "/signin" || pathname === "/signup"
