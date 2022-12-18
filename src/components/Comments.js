@@ -31,6 +31,7 @@ export default function Comments() {
   //Fetching Comment From the firebase database
   useEffect(() => {
     getFirebase();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   //Adding Comment Function
