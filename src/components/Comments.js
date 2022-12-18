@@ -1,21 +1,12 @@
-import {
-  get,
-  getDatabase,
-  orderByKey,
-  query,
-  ref,
-  set,
-} from "firebase/database";
 import { nanoid } from "nanoid";
 import { useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthProvider";
+import useFirebase from "../hooks/useFirebase";
 import classes from "../styles/Comments.module.css";
 import CommentContainer from "./CommentContainer";
 
 export default function Comments() {
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [data, setData] = useState([]);
   const inputRef = useRef(null);
@@ -31,51 +22,16 @@ export default function Comments() {
     e.target.style.height = `${h}px`;
   }
 
+  const { loading, error, getFirebase, setFirebase } = useFirebase(
+    data,
+    setData,
+    pathname
+  );
+
   //Fetching Comment From the firebase database
   useEffect(() => {
-    async function fetchComment() {
-      const db = getDatabase();
-      const commentRef = ref(db, `comments/${pathname}`);
-      const commentQuery = query(commentRef, orderByKey());
-
-      try {
-        setError(false);
-        setLoading(true);
-        const snapshot = await get(commentQuery);
-        setLoading(false);
-        if (snapshot.exists()) {
-          const newData = snapshot.val().data;
-          set(commentRef, { newData });
-          setData(newData);
-        } else {
-          console.log("There is no data found!");
-        }
-      } catch (err) {
-        console.log(err);
-        setLoading(false);
-        setError(true);
-      }
-    }
-
-    fetchComment();
-  }, [pathname]);
-
-  //Updating Comment in the firebase database
-  useEffect(() => {
-    if (data.length > 0) {
-      const db = getDatabase();
-      const commentRef = ref(db, `comments/${pathname}`);
-      set(commentRef, { data });
-    }
-
-    return () => {
-      if (data.length === 0) {
-        const db = getDatabase();
-        const commentRef = ref(db, `comments/${pathname}`);
-        set(commentRef, { data });
-      }
-    };
-  }, [pathname, data]);
+    getFirebase();
+  }, []);
 
   //Adding Comment Function
   const addComment = () => {
@@ -86,8 +42,7 @@ export default function Comments() {
 
     if (/^\s/.test(inputValue) || inputValue === "") return setInputValue("");
 
-    const { uid } = currentUser;
-    const { displayName } = currentUser;
+    const { uid, displayName } = currentUser;
 
     const uniqueId = nanoid();
 
@@ -101,7 +56,11 @@ export default function Comments() {
       stringNewDate: "",
     };
 
-    setData((prevState) => [comment, ...prevState]);
+    setData((prevState) => {
+      const data = [comment, ...prevState];
+      setFirebase(data);
+      return data;
+    });
 
     setInputValue("");
 
@@ -125,7 +84,11 @@ export default function Comments() {
     current.edit = true;
     current.stringNewDate = new Date().toString();
 
-    setData((prevState) => [...prevState]);
+    setData((prevState) => {
+      const data = [...prevState];
+      setFirebase(data);
+      return data;
+    });
   };
 
   //Delete comment function
@@ -136,11 +99,7 @@ export default function Comments() {
 
     setData(newData);
 
-    if (data) {
-      const db = getDatabase();
-      const commentRef = ref(db, `comments/${pathname}`);
-      set(commentRef, { newData });
-    }
+    setFirebase(newData);
   };
 
   return (

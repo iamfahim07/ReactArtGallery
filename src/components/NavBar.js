@@ -5,7 +5,6 @@ import classes from "../styles/Nav.module.css";
 
 export default function Navbar({ show, setShow }) {
   const { currentUser, signout } = useAuth();
-
   const { pathname } = useLocation();
 
   const slideBar = () => {

@@ -8,10 +8,9 @@ import {
 } from "firebase/database";
 import { useState } from "react";
 
-export default function useDatabase(location) {
+export default function useFirebase(data, setData, location) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  const [data, setData] = useState([]);
 
   const db = getDatabase();
   const commentRef = ref(db, `comments/${location}`);
@@ -24,9 +23,9 @@ export default function useDatabase(location) {
       const snapshot = await get(commentQuery);
       setLoading(false);
       if (snapshot.exists()) {
-        const newData = snapshot.val().data;
-        set(commentRef, { newData });
-        setData(newData);
+        const data = snapshot.val().data;
+        set(commentRef, { data });
+        setData(data);
       } else {
         console.log("There is no data found!");
       }
@@ -37,12 +36,11 @@ export default function useDatabase(location) {
     }
   }
 
-  async function setFirebase(receiveData) {
-    await set(commentRef, { receiveData });
+  async function setFirebase(data) {
+    await set(commentRef, { data });
   }
 
   return {
-    data,
     loading,
     error,
     getFirebase,
