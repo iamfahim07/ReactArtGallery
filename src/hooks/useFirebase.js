@@ -8,7 +8,7 @@ import {
 } from "firebase/database";
 import { useState } from "react";
 
-export default function useFirebase(data, setData, location) {
+export default function useFirebase(setData, location) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
@@ -24,7 +24,6 @@ export default function useFirebase(data, setData, location) {
       setLoading(false);
       if (snapshot.exists()) {
         const data = snapshot.val().data;
-        set(commentRef, { data });
         setData(data);
       } else {
         console.log("There is no data found!");

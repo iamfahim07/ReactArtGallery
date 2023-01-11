@@ -23,7 +23,6 @@ export default function Comments() {
   }
 
   const { loading, error, getFirebase, setFirebase } = useFirebase(
-    data,
     setData,
     pathname
   );
