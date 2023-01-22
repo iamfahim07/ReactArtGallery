@@ -46,13 +46,13 @@ export default function CommentContainer({
   }, [currentUser, userId]);
 
   useEffect(() => {
-    if (!edit) {
+    if (edit) {
       inputRef.current.value = updatedData;
       inputRef.current.focus();
     }
   }, [updatedData, edit]);
 
-  return edit ? (
+  return !edit ? (
     <div className={classes.userContainer}>
       <h3 className={classes.name}>{name}</h3>
       <p className={classes.dateText}>{`${

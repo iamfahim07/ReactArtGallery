@@ -40,7 +40,7 @@ export default function Comments() {
         replace: true,
       });
 
-    if (/^\s/.test(inputValue) || inputValue === "") return setInputValue("");
+    // if (/^\s/.test(inputValue) || inputValue === "") return setInputValue("");
 
     const { uid, displayName } = currentUser;
 
@@ -50,17 +50,19 @@ export default function Comments() {
       userId: uid,
       name: displayName,
       id: uniqueId,
-      value: inputValue,
-      edit: true,
+      value: inputValue.trim(),
+      edit: false,
       stringDate: new Date().toString(),
       stringNewDate: "",
     };
 
-    setData((prevState) => {
-      const data = [comment, ...prevState];
-      setFirebase(data);
-      return data;
-    });
+    if (comment.value !== "") {
+      setData((prevState) => {
+        const data = [comment, ...prevState];
+        setFirebase(data);
+        return data;
+      });
+    }
 
     setInputValue("");
 
@@ -72,7 +74,7 @@ export default function Comments() {
     const id = e.target.id;
 
     let current = data.find((obj) => obj.id === id);
-    current.edit = false;
+    current.edit = true;
 
     setData((prevState) => [...prevState]);
   };
@@ -80,8 +82,8 @@ export default function Comments() {
   //Update comment function
   const updateComment = (id, updatedData) => {
     let current = data.find((obj) => obj.id === id);
-    current.value = updatedData;
-    current.edit = true;
+    current.value = updatedData.trim();
+    current.edit = false;
     current.stringNewDate = new Date().toString();
 
     setData((prevState) => {
